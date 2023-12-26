@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "alkhwarizmispeaker",
+  "private_key_id": "6ccdee4e784adee67dce4498328ffb3f717cb3f6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCxanzFUVIoozmT\nCRkNnaYtkkluqJBL1ylbPfcHyNMWcqhO4NlqnswH2EpAtaDcMPCpkx5a/EtyR+B9\nnLjRKzHhEXT64BfqQkTwGEaDE65jc9rVx1x226S9mDg1YdD6bk5vj/oreNwl40k6\nfEUo16oKpcpXClmFslMkGI1/Zh0oMK0UZ9dt9bCyIBRi+R3OOCSAv+1DpWHYWuRM\nlhccA4BOD3kMpTGc0eP8LJoFEGq6OB5UQeuXTLHKNUyMnM4TvaXl0w5o3YF7qaC0\n25AK+OqoCLYg7JFTM1Zk6Mhqzsp656G6HnHeXlpNrrmrxdssHfDy1nnVr17SmiGm\n82qg2C4dAgMBAAECggEADM7ae5c7lm30M9p6CcraCpuvO/Mk2ajKlkjyqsfzf0Ef\nR/SBFaqpoZ5ae/HwzzykPyW9EQX6P2GTghX8nLMg2nX7azoe191ZYzjpbECRPCJK\nx9io4vbH3Z0d37K0VsP8Wx76iUVkJUMTkAqVJpXtM3AVG7QGUvnU+TvhiTM6wyIj\nnf7gqlnm1W0qswbPUV8EQEqcCAI8LljmPHm8vYMXDs7SB1X6jh5KAskGSwDVd7Pc\nMAmgKM1PHFIsB4/AoMUdk/9YkwBlA1CvyPFsqO0CRuDW6hUAPEByJGZ5X+Ur0PTz\nognjx6zlLuOvSx0k9/g6/iFQBOJyBRdjhCeE+5xUKQKBgQDlWfduZwXcILJkv4kh\nSlrI6IhIYG8kzB+W/EiVk9sDNZIOcnQ8gXiQ8pyyWqSp++osU5HnERCf9BuMGYXW\n1zaHFnohLFI1mMS13LVOJ2cDcfleZcnxaL3sZ8kNADZtJW8Aw3haXV9pYYwTW0HY\nMSwC38V6GXessXYRhPz+S5f8VQKBgQDGB7TA/q6C9+/IYezgdrLBIC+CqFrKudjt\ntgcgXewZmJImFEXSdW8ma8fEfmkTfI8EOqy7xB9sjjBZnhql/df63MU1BPoAU4KH\njG1SthG5HfLI46dH9m8P4TKgyeQXXWkfMt7AxzuF5O68goPfNV8KnFKcWsivKj/h\n5Q/OW1IyqQKBgQDJkJjZiWdn/8BotMCS5mMFIP/tA/uKDm9Q5aXw90HK/0C+u64W\nIv9P/Djksq72yXQTwtp+hcvjl8jCBwhOOVQtwv5Qu0AA5KM05aTd69kn+PndEX46\nUQBhjRDwARjUMcrtk9zpJhidZ+KQfGpQ015HpFxMo6c+ubP3T7Z80vjfBQKBgQCV\n3W0YhWUSLoqjjiBS+uFqsG3kJn6XXzBhLVmVUB8Ge+VWtg7lKARXAkgrVzM0ERa2\nr6TbcKALakwC9ljaeBHEguEnr713E7v70vVFHA6rlpOPHmIRXtlMHjRPZJqeaA3P\nE5NqNxy/xrI5rVgZSu3DPOxz8Wxgy8uOq+hbVdcOCQKBgBIznIFAWaa/wgWVJ38M\nut5iPUasQucOqMR2ajoXBprMsoXBnDVKrwkv/xyN17tU747vkMUOhxYGi0tM1sJl\nXIejz52DTqJwFEPdBP6PJd7AJqKOQEbk4b7rzyj9nrhXJCleEKKFe2L/Wp2Bg1AS\nViBkL5GNuIa6QB5tfrMrhgAw\n-----END PRIVATE KEY-----\n",
+  "client_email": "speakerspeech@alkhwarizmispeaker.iam.gserviceaccount.com",
+  "client_id": "102677482976271858316",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/speakerspeech%40alkhwarizmispeaker.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

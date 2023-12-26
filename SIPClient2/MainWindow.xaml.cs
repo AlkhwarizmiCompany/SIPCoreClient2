@@ -158,7 +158,7 @@ namespace SIPClient2
 
         public async Task StartStream()
         {
-            string jsonCredentialsPath = "G:\\src\\SIP\\SIPClient1\\SIPClient1\\alkhwarizmispeaker-6ccdee4e784a.json";
+            string jsonCredentialsPath = "alkhwarizmispeaker-6ccdee4e784a.json";
 
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", jsonCredentialsPath);
 
@@ -289,7 +289,7 @@ namespace SIPClient2
                 //await Stt.STTStream();
 
                 await Stt.StartStream();
-                File.Start("G:\\src\\SIP\\SIPClient2\\SIPClient2\\Audio\\e4107ded-463b-4c3a-8ac1-61b7b920ab99.wav", Stt.StreamingCall);
+                File.Start("C:\\src\\SIPService\\SipServerService\\bin\\Debug\\net6.0\\SIPService\\Audio\\c057d083-f7ac-47d4-8ef1-f3ddbd1712b5.wav", Stt.StreamingCall);
                 //File.Start("G:\\src\\SIP\\SIPClient2\\SIPClient2\\ad076212-d368-422c-88aa-223781e54acd.wav", Stt.StreamingCall);
 
                 //Mic.Stop();
