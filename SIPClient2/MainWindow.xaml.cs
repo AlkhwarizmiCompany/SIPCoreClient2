@@ -123,6 +123,7 @@ namespace SIPClient2
                     while ((bytesRead = audioStream.Read(buffer, 0, buffer.Length)) > 0)
                     {
                         //HasSpeech(buffer);
+                        //log.Info(buffer);
 
                         await StreamingCall.WriteAsync(new StreamingRecognizeRequest
                         {
@@ -134,9 +135,9 @@ namespace SIPClient2
 
                 await StreamingCall.WriteCompleteAsync();
 
-                string result = string.Concat(speechFlags.Select(b => b ? '1' : '0'));
+                //string result = string.Concat(speechFlags.Select(b => b ? '1' : '0'));
 
-                //log.Info(result);
+                log.Info("end");
             });
 
         }
@@ -172,9 +173,17 @@ namespace SIPClient2
                     Encoding = RecognitionConfig.Types.AudioEncoding.Linear16,
                     SampleRateHertz = 8000,
                     LanguageCode = LanguageCodes.Arabic.SaudiArabia,
+                    MaxAlternatives = 1,
+                    EnableWordTimeOffsets = true,
+                    //ProfanityFilter=true
+                    //Model = "latest_long",
+                    Model = "telephony",
+                    //UseEnhanced = true,
                 },
                 InterimResults = false,
-                //VoiceActivityTimeout=VoiceActivityTimeout.
+                EnableVoiceActivityEvents = true,
+                //SingleUtterance = true
+
             };
 
             await StreamingCall.WriteAsync(new StreamingRecognizeRequest
@@ -194,16 +203,44 @@ namespace SIPClient2
             {
                 await foreach (var response in responseStream)
                 {
-                    foreach (var result in response.Results)
+                    if (response.SpeechEventType == StreamingRecognizeResponse.Types.SpeechEventType.SpeechActivityBegin)
                     {
-                        if (!result.IsFinal)
-                            continue;
 
-                        text = result.Alternatives[0].Transcript;
+                        //log.Info($"[{response.RequestId}]: Speech Begins At {response.SpeechEventTime}");
+                    }
+                    else if (response.SpeechEventType == StreamingRecognizeResponse.Types.SpeechEventType.SpeechActivityEnd)
+                    {
+                        //log.Info($"[{response.RequestId}]: Speech Ends At {response.SpeechEventTime}");
+                    }
+                    else if (response.SpeechEventType == StreamingRecognizeResponse.Types.SpeechEventType.SpeechActivityTimeout)
+                    {
+                        //log.Info($"[{response.RequestId}]: Speech TimeOut At {response.SpeechEventTime}");
+
+                    }
+                    else if (response.SpeechEventType == StreamingRecognizeResponse.Types.SpeechEventType.SpeechEventUnspecified)
+                    {
+                        //log.Info($"[{response.RequestId}]: Speech result, TotalBilled: {response.TotalBilledTime}");
+
+                        foreach (var result in response.Results)
+                        {
+                            if (!result.IsFinal)
+                            {
+                                log.Info($"[{response.RequestId}]: result is not final At {result.ResultEndTime}");
+
+                                continue;
+                            }
+
+                            if (result.Alternatives.ToList().Count > 1)
+                            {
+                                log.Info($"[{response.RequestId}]: result has multiple Alternatives At {result.ResultEndTime}");
+                            }
+
+                            var alter = result.Alternatives[0];
 
 
-                        log.Info($"Transcript: {text}");
+                            log.Info($"[{response.RequestId}]: Transcript: {alter.Transcript}, At {result.ResultEndTime}, with confidence: {alter.Confidence}");
 
+                        }
                     }
                 }
             }
@@ -289,7 +326,7 @@ namespace SIPClient2
                 //await Stt.STTStream();
 
                 await Stt.StartStream();
-                File.Start("C:\\src\\SIPService\\SipServerService\\bin\\Debug\\net6.0\\SIPService\\Audio\\c057d083-f7ac-47d4-8ef1-f3ddbd1712b5.wav", Stt.StreamingCall);
+                File.Start("C:\\src\\SIPService\\SipServerService\\bin\\Debug\\net6.0\\SIPService\\Audio\\12-31-2023\\debeaf1b-868f-431c-84f2-73152b5860a5.wav", Stt.StreamingCall);
                 //File.Start("G:\\src\\SIP\\SIPClient2\\SIPClient2\\ad076212-d368-422c-88aa-223781e54acd.wav", Stt.StreamingCall);
 
                 //Mic.Stop();
